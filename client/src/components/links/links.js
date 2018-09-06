@@ -9,9 +9,9 @@ const Links = ( props ) => (
 
                 <p>Interests</p>
                 <p>
-                    <a href = "http://www.google.com" target="_blank" className="w3-tag w3-small w3-theme-d5">Google</a>
-                    <a href = "http://www.facebook.com" target="_blank" className="w3-tag w3-small w3-theme-d4">Facebook</a>
-                    <a href = "http://www.instagram.com" target="_blank" className="w3-tag w3-small w3-theme-d3">Instagram</a>
+                    <a href = "http://www.google.com" style={{display: "table-cell"}} target="_blank" className="w3-tag w3-small w3-theme-d5">Google</a>
+                    <a href = "http://www.facebook.com" style={{display: "table-cell"}} target="_blank"  className="w3-tag w3-small w3-theme-d4">Facebook</a>
+                    <a href = "http://www.instagram.com" style={{display: "table-cell"}} target="_blank"  className="w3-tag w3-small w3-theme-d3">Instagram</a>
                     <span className="w3-tag w3-small w3-theme-d2">Games</span>
                     <span className="w3-tag w3-small w3-theme-d1">Friends</span>
                     <span className="w3-tag w3-small w3-theme">Games</span>
