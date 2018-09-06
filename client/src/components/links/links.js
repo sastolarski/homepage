@@ -2,16 +2,16 @@ import React from 'react';
 import "../../vendor/notes.css";
 
 const Links = ( props ) => (
-    <div id="drag3" style={{padding:20}} draggable="true" onDragStart={props.drag}>
+    <div id="drag3" style={{padding:20}} >
 
         <div id="box3" className="w3-card w3-round w3-white w3-hide-small">
             <div className="w3-container">
 
                 <p>Interests</p>
                 <p>
-                    <a href = "http://www.google.com" className="w3-tag w3-small w3-theme-d5">Google</a>
-                    <a href = "http://www.facebook.com" className="w3-tag w3-small w3-theme-d4">Facebook</a>
-                    <a href = "http://www.instagram.com" className="w3-tag w3-small w3-theme-d3">Instagram</a>
+                    <a href = "http://www.google.com" target="_blank" className="w3-tag w3-small w3-theme-d5">Google</a>
+                    <a href = "http://www.facebook.com" target="_blank" className="w3-tag w3-small w3-theme-d4">Facebook</a>
+                    <a href = "http://www.instagram.com" target="_blank" className="w3-tag w3-small w3-theme-d3">Instagram</a>
                     <span className="w3-tag w3-small w3-theme-d2">Games</span>
                     <span className="w3-tag w3-small w3-theme-d1">Friends</span>
                     <span className="w3-tag w3-small w3-theme">Games</span>

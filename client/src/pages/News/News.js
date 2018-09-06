@@ -1,12 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import Container from "../../components/Grid/Container";
 import Links from "../../components/links";
-const News = () => (
-    <Container fluid>
-        <h1>News Page</h1>
-        <Links/>
-    </Container>
 
-);
+class News extends Component {
+    state = {
 
-export default News;
+    };
+    componentDidMount() {
+        console.log("hello");
+    }
+
+
+    render() {
+        return (
+            <Container fluid>
+                <h1>News Page</h1>
+                <Links />
+            </Container>
+        ) 
+    
+}
+}
+
+    export default News;
