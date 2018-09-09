@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Calendar from "./pages/Calendar";
 import Contacts from "./pages/Contacts";
 import News from "./pages/News";
+import Facebook from "./pages/FacebookLogin";
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ const App = () =>
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/news" component={News} />
         <Route exact path="/contacts" component={Contacts} />
+        <Route exact path="/login" component={Facebook} />
         <Route component={NoMatch} />
       </Switch>
     </div>
