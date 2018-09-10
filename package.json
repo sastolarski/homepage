@@ -22,7 +22,9 @@
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
     "if-env": "^1.0.4",
+    "moment": "^2.22.2",
     "mongoose": "^5.2.13",
+    "react-moment": "^0.7.9",
     "react-facebook-login": "^4.1.0",
     "react-google-login": "^3.2.1",
     "react-router-dom": "^4.3.1"
