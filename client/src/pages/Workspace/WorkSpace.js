@@ -8,8 +8,10 @@ import ColMd7 from "../../components/colMd7";
 import { listDisplay } from "./display functions";
 import ButtonBox from "../../components/ButtonBox";
 import Col2 from "../../components/ColMd2";
+import {pizzas} from "../Calendar/Calendar";
 class WorkSpace extends Component {
     state = {
+        pizzas: pizzas._currentValue.username,
         noteTitles: ["note1", "note2", "note3"],
         notes: ['  this is note 1, there are many like it but this one is mine', 'this is note two, less exciting than note 1', 'this is note 3, Nobody likes me'],
         pizza: "yesPlease",
@@ -27,9 +29,8 @@ class WorkSpace extends Component {
         list2class: "w3-hide",
         list3class: "w3-hide",
         list1: "notes"
-
-
     };
+
     //list display functions
     // listDisplay = ( event, item ) => {
     //     console.log( "clicked" );
@@ -79,6 +80,7 @@ class WorkSpace extends Component {
     //   };
     componentDidMount() {
         console.log( listDisplay )
+        console.log(this.state.pizzas)
     }
     findNote = ( index ) => {
         console.log( this.state.notes[index] )

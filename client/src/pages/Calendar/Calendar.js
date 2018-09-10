@@ -3,6 +3,9 @@ import Container from "../../components/Grid/Container";
 import Calendar from "../../components/calendar";
 import moment from 'moment';
 import "../../vendor/calendar.css";
+import WorkSpace from "../Workspace";
+
+var userName ="user Name";
 
 class CalendarPage extends Component {
     state = {
@@ -23,6 +26,7 @@ class CalendarPage extends Component {
     };
 
     componentDidMount() {
+        
         // debugger;
         // this.setState( { thisMonth: moment().format( "MM" ) } );
         // this.setState( { thisYear: moment().format( "YYYY" ) } )
@@ -83,6 +87,7 @@ class CalendarPage extends Component {
 
     dayShower = () => {
         console.log( this.state.days );
+        
     }
     calMaker = () => {
         console.log( "days" + this.state.days );
@@ -145,8 +150,10 @@ class CalendarPage extends Component {
 
     }
     render() {
+        const{pizza} = this.context
         return (
             <div>
+                {pizza}
                 <Calendar
                     prevMonth={this.prevMonth}
                     nextMonth={this.nextMonth}
@@ -163,6 +170,7 @@ class CalendarPage extends Component {
             </div>
         )
     };
+    
 }
 
 {/* //         <Container fluid>
@@ -175,5 +183,13 @@ class CalendarPage extends Component {
 //     }
 
 // }
+// export const pizza = {
+//     light: {username:CalendarPage.state
+//     }
+//   };
 
-export default CalendarPage;
+
+export const pizzas = React.createContext(
+    {username:"userName"} // default value
+);
+export default  CalendarPage;
