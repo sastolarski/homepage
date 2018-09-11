@@ -1,19 +1,21 @@
 import React from "react";
 
 const ButtonBox =(props)=>(
-    <div id="box1" class="w3-card w3-round w3-white">
-    <td>Filename to Save As:</td>
+    <div id="box1" style={{textAlign:"center"}} class="w3-card w3-round w3-white">
+    <p>Filename to Save As:</p>
     <br/>
             
-    <td><input id="inputFileNameToSaveAs"></input></td>
-    <td><button onClick={props.button1} >Save Text to File</button></td>
-<br/>
-    <td>Select a File to Load:</td>
+    <input style={{width:100+"%", boxSizing:"border-box"}} id="inputFileNameToSaveAs"></input>
     <br/>
-    <td><input type="file" id="fileToLoad" /></td>
+    <p><button onClick={props.button1} >Save Text to File</button></p>
+<hr/>
+    <p>Select a File to Load:</p>
     <br/>
-    <td><button onClick={props.button2} >Load Selected File</button></td>
-    <td><p id="optionalText"></p></td>
+    <input type="file" id="fileToLoad" />
+    <br/><br/>
+    <button onClick={props.button2} >Load Selected File</button>
+    <div id="optionalText"></div>
+    
     </div>
 
 )

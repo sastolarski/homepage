@@ -8,8 +8,8 @@ width: 300px;
 margin: 10px;
 /* padding: 10px 5px 250px; */
 overflow: scroll;
-border: 1px solid #b7b7b7;
--webkit-border-radius: 8px;
+border:  solid #87bdd8;
+border-width: 2px 0px 0px .5px;-webkit-border-radius: 8px;
 border-radius: 8px;
 font: normal 16px/normal "Times New Roman", Times, serif;
 color: rgba(0,142,198,1);
@@ -28,3 +28,6 @@ resize:none;
 .hidden { 
     display:none; 
 }
+.scroll::-webkit-scrollbar {
+    display: none;
+  }
