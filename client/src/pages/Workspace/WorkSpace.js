@@ -165,7 +165,7 @@ class WorkSpace extends Component {
         return (
             <div>
 
-                <Col3
+                <Col2
                     childComponent1={<ItemList
                         list1Title={"notes"}
                         noteTitles={this.state.noteTitles}
@@ -181,7 +181,7 @@ class WorkSpace extends Component {
                     />}
                 >
 
-                </Col3>
+                </Col2>
                 <ColMd7
                     childComponent1={<MainNote
 

@@ -49,44 +49,40 @@ class CalendarPage extends Component {
         this.calMaker();
     }
     setInitialStates = () => {
-        this.setState({ thisMonth: moment().format("MM") });
-        this.setState({ thisYear: moment().format("YYYY") })
-        var daysarr = Array.apply(null, Array(this.state.thisMonthDays)).map(function (x, i) { return i + 1 });
-        this.setState({
+        this.setState( { thisMonth: moment().format( "MM" ) } );
+        this.setState( { thisYear: moment().format( "YYYY" ) } )
+        var daysarr = Array.apply( null, Array( this.state.thisMonthDays ) ).map( function ( x, i ) { return i + 1 } );
+        this.setState( {
             days: daysarr
-        })
-        this.setState({ days: daysarr }) //set the new state
-
-        var pos = this.state.weekDays.indexOf(moment(this.state.dates[1]).format("dddd").toString());
-        console.log("position" + pos);
-        console.log(this.state.weekDays)
+        } )
+        this.setState( { days: daysarr } ) //set the new state
+        var pos = this.state.weekDays.indexOf( moment( this.state.dates[1] ).format( "dddd" ).toString() );
+        console.log( "position" + pos );
+        console.log( this.state.weekDays )
     }
     componentDidUpdate() {
-        console.log(this.state)
-
+        console.log( this.state )
     }
-
+    // called when you change month
     daySetter = () => {
         var month = this.state.thisMonth.toString();
         var year = this.state.thisYear.toString();
-        console.log(month + "/" + year);
-        this.setState({ newMonthDays: moment(moment().format(year + "-" + month), "YYYY-MM").daysInMonth() }, () => {
-
-            var daysarr = Array.apply(null, Array(this.state.newMonthDays)).map(function (x, i) { return i + 1 });
-            console.log("daysarr" + daysarr);
-            this.setState({ days: daysarr }); //set the new state
-            console.log(this.state.thisMonthDays)
-            this.setState({
+        console.log( month + "/" + year );
+        this.setState( { newMonthDays: moment( moment().format( year + "-" + month ), "YYYY-MM" ).daysInMonth() }, () => {
+            var daysarr = Array.apply( null, Array( this.state.newMonthDays ) ).map( function ( x, i ) { return i + 1 } );
+            console.log( daysarr );
+            console.log( this.state.newMonthDays )
+            this.setState( {
                 days: daysarr
-            })
-            console.log(daysarr);
+            } )
+            console.log( daysarr );
 
-        });
+        } );
         this.dayShower(); //
     }
 
     dayShower = () => {
-        console.log(this.state.days);
+        console.log( this.state.days );
 
     }
     calMaker = () => {
@@ -95,38 +91,48 @@ class CalendarPage extends Component {
         console.log(this.state);
 
     };
-
+    // change month button functions
     prevMonth = () => {
-        if (this.state.thisMonth === "1") {
-            this.setState({ thisMonth: "12" });
-            this.setState({ thisYear: (Number.parseInt(this.state.thisYear, 10) - 1).toString() });
-            console.log(this.state.thisYear);
+        if ( this.state.thisMonth === "1" ) {
+            this.setState( { thisMonth: "12" } );
+            this.setState( { thisYear: ( Number.parseInt( this.state.thisYear, 10 ) - 1 ).toString() } , () => {
+                this.daySetter();
+            });
+            console.log( this.state.thisYear );
         }
         else {
-            this.setState({ thisMonth: (Number.parseInt(this.state.thisMonth, 10) - 1).toString() });
+            this.setState( { thisMonth: ( Number.parseInt( this.state.thisMonth, 10 ) - 1 ).toString() } , () => {
+                this.daySetter();
+            });
         }
-        console.log(this.state.thisYear);
-        console.log(this.state.thisMonth);
-        this.daySetter();
+        console.log( this.state.thisYear );
+        console.log( this.state.thisMonth );
+        // this.daySetter();
     }
     nextMonth = () => {
-        if (this.state.thisMonth === "12") {
-            this.setState({ thisMonth: "1" });
-            this.setState({ thisYear: (Number.parseInt(this.state.thisYear, 10) + 1).toString() });
-            console.log("newYear: " + this.state.thisYear);
+        if ( this.state.thisMonth === "12" ) {
+            this.setState( { thisMonth: "1" } );
+            this.setState( { thisYear: ( Number.parseInt( this.state.thisYear, 10 ) + 1 ).toString() } , () => {
+                this.daySetter();
+            });
+            console.log( "newYear: " + this.state.thisYear );
         }
         else {
             // var month = this.state.thisMonth;
             // month = Number.parseInt( month, 10 );
-            this.setState({ thisMonth: (Number.parseInt(this.state.thisMonth, 10) + 1).toString() });
-            console.log("newMonth:" + this.state.thisMonth);
+            this.setState( { thisMonth: ( Number.parseInt( this.state.thisMonth, 10 ) + 1 ).toString() } , () => {
+                this.daySetter();
+            });
+            console.log( "newMonth:" + this.state.thisMonth );
         }
 
-        this.daySetter();
+        // this.daySetter();
     }
-    mapCal = (days) => {
-        console.log(this.state.days)
-        this.state.days.map(function (day) {
+
+    //map the days of the month 
+    mapCal = ( days ) => {
+        console.log( this.state.days )
+        this.state.days.map( function ( day ) {
             return (
                 <div style={{ color: "#034f84", fontWeight: "bold" }} className="calendarDay">
                     {day}
@@ -150,6 +156,7 @@ class CalendarPage extends Component {
 
     }
     render() {
+        {this.daySetter}
         const { pizza } = this.context
         return (
             <div>
