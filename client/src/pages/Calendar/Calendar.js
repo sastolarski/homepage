@@ -56,22 +56,20 @@ class CalendarPage extends Component {
             days: daysarr
         } )
         this.setState( { days: daysarr } ) //set the new state
-
         var pos = this.state.weekDays.indexOf( moment( this.state.dates[1] ).format( "dddd" ).toString() );
         console.log( "position" + pos );
         console.log( this.state.weekDays )
     }
     componentDidUpdate(){
-        console.log(this.state)
-        
+        console.log(this.state)    
     }
-
+// called when you change month
     daySetter = () => {
         var month = this.state.thisMonth.toString();
         var year = this.state.thisYear.toString();
         console.log(month +"/"+ year);
         this.setState( { newMonthDays: moment( moment().format( year + "-" + month ), "YYYY-MM" ).daysInMonth() }, () => {
-    
+
         var daysarr = Array.apply( null, Array( this.state.newMonthDays ) ).map( function ( x, i ) { return i + 1 } );
         console.log( daysarr );
         this.setState( { days: daysarr } ); //set the new state
@@ -95,7 +93,7 @@ class CalendarPage extends Component {
         console.log( this.state );
 
     };
-
+// change month button functions
     prevMonth = () => {
         if ( this.state.thisMonth === "1" ) {
             this.setState( { thisMonth: "12" } );
@@ -124,6 +122,8 @@ class CalendarPage extends Component {
         
         this.daySetter();
     }
+
+    //map the days of the month 
     mapCal = ( days ) => {
         console.log(this.state.days)
         this.state.days.map( function ( day ) {
