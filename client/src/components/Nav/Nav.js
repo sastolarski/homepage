@@ -1,9 +1,10 @@
 import React from "react";
+import {userName} from "../../pages/Calendar/Calendar";
 
 const Nav =(props)=> (
   <div className="w3-bar w3-black" style={{position:"fixed"}}>
 <div>
-    <span style = {{position:"absolute", left:15+"%"}} class="w3-bar-item w3-large">Welcome User</span>
+    <span style = {{position:"absolute", left:15+"%"}} class="w3-bar-item w3-large">Welcome {userName._currentValue.username}</span>
 <div  style={{position:"relative", right:15+"%"}}>
     <a href="/home/name" className="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-right">home/:id</a>
 

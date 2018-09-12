@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FacebookLogin from "react-facebook-login";
+// import db from "../../../../controllers/";
 
 export default class Facebook extends Component {
   state = {
@@ -9,7 +10,9 @@ export default class Facebook extends Component {
     email: "",
     picture: ""
   };
+componentDidMoun(){
 
+}
   //un comment this console log to see all the data returned from facebook on login
   responseFacebook = response => {
     console.log(response);
