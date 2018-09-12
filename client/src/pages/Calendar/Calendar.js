@@ -13,17 +13,17 @@ class CalendarPage extends Component {
         thisMonth: 2,
         thisYear: 1992,
         monthVariable: '',
-        monthStart: moment().startOf( 'month' ),
-        thisMonthDays: moment( moment().format( "YYYY" + "-" + "MM" ), "YYYY-MM" ).daysInMonth(),
+        monthStart: moment().startOf('month'),
+        thisMonthDays: moment(moment().format("YYYY" + "-" + "MM"), "YYYY-MM").daysInMonth(),
         newMonthDays: 0,
         weekDayCalendar: moment.weekdays(),
-        weekDays: moment.weekdays().toString().split( "," ),
+        weekDays: moment.weekdays().toString().split(","),
         calendar: [],
-        startDay: moment().clone().startOf( 'month' ).startOf( 'week' ),
-        endDay: moment().clone().endOf( 'month' ).endOf( 'week' ),
+        startDay: moment().clone().startOf('month').startOf('week'),
+        endDay: moment().clone().endOf('month').endOf('week'),
         days: [],
         emptyarr: [],
-        dates: ['Thu Sep 01 2016 00:10:01 GMT+1200 (CST)', 'Fri Sep 02 2016 00:00:00 GMT+0800 (CST)', 'Sat Sep 03 2016 00:00:00 GMT+0800 (CST)', 'Sun Sep 04 2016 00:00:00 GMT+0800 (CST)', 'Mon Sep 05 2016 00:00:00 GMT+0800 (CST)', 'Tue Sep 06 2016 00:00:00 GMT+0800 (CST)', 'Wed Sep 07 2016 00:00:00 GMT+0800 (CST)', 'Thu Sep 08 2016 00:00:00 GMT+0800 (CST)', 'Fri Sep 09 2016 00:00:00 GMT+0800 (CST)', 'Sat Sep 10 2016 00:00:00 GMT+0800 (CST)', 'Sun Sep 11 2016 00:00:00 GMT+0800 (CST)', 'Mon Sep 12 2016 00:00:00 GMT+0800 (CST)', 'Tue Sep 13 2016 00:00:00 GMT+0800 (CST)', ' Wed Sep 14 2016 00:00:00 GMT+0800 (CST)', ' Thu Sep 15 2016 00:00:00 GMT+0800 (CST)', 'Fri Sep 16 2016 00:00:00 GMT+0800 (CST)', 'Sat Sep 17 2016 00:00:00 GMT+0800 (CST)', 'Sun Sep 18 2016 00:00:00 GMT+0800 (CST)', 'Mon Sep 19 2016 00:00:00 GMT+0800 (CST)', ' Tue Sep 20 2016 00:00:00 GMT+0800 (CST)', 'Wed Sep 21 2016 00:00:00 GMT+0800 (CST)', 'Thu Sep 22 2016 00:00:00 GMT+0800 (CST)', 'Fri Sep 23 2016 00:00:00 GMT+0800 (CST)', 'Sat Sep 24 2016 00:00:00 GMT+0800 (CST)', 'Sun Sep 25 2016 00:00:00 GMT+0800 (CST)', 'Mon Sep 26 2016 00:00:00 GMT+0800 (CST)', 'Tue Sep 27 2016 00:00:00 GMT+0800 (CST)', 'Wed Sep 28 2016 00:00:00 GMT+0800 (CST)', 'Thu Sep 29 2016 00:00:00 GMT+0800 (CST)', 'Fri Sep 30 2016 00:00:00 GMT+0800 (CST)']
+        dates: []
     };
 
     componentDidMount() {
@@ -87,9 +87,9 @@ class CalendarPage extends Component {
     }
 
     calMaker = () => {
-        console.log( "days" + this.state.days );
+        console.log("days" + this.state.days);
 
-        console.log( this.state );
+        console.log(this.state);
 
     };
 
@@ -170,16 +170,20 @@ class CalendarPage extends Component {
                     <textarea id={day} className="scroll" style={{ alighn: "right", margin: 0, width: "fit-content", border: 0, height: 95 + "%" }} type="text" name="name" />
                 </div>
             )
-        } )
+        })
     }
 
     emptyMaker = () => {
         //adapt monthstart for dynamic changes
+<<<<<<< HEAD
         var pos = this.state.weekDays.indexOf( this.state.monthStart );
+=======
+        var pos = this.state.weekDays.indexOf(this.state.monthStart.format('dddd')).toString();
+>>>>>>> master
         var emptyArr = [];
-        console.log( "emptyMaker" + pos )
-        for ( var day = 0; day < pos; day++ ) {
-            emptyArr.push( <div className="calendarDay"></div> );
+        console.log("emptyMaker" + pos)
+        for (var day = 0; day < pos; day++) {
+            emptyArr.push(<div className="calendarDay"></div>);
         }
 
         return emptyArr;

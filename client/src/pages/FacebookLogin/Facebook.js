@@ -15,7 +15,7 @@ componentDidMoun(){
 }
   //un comment this console log to see all the data returned from facebook on login
   responseFacebook = response => {
-    // console.log(response);
+    console.log(response);
 
     this.setState({
       isLoggedIn: true,
