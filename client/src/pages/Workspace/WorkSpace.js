@@ -8,10 +8,11 @@ import ColMd7 from "../../components/colMd7";
 import { listDisplay } from "./display functions";
 import ButtonBox from "../../components/ButtonBox";
 import Col2 from "../../components/ColMd2";
-import {pizzas} from "../Calendar/Calendar";
+import {userName} from "../Calendar/Calendar";
+
 class WorkSpace extends Component {
     state = {
-        pizzas: pizzas._currentValue.username,
+        pizzas: userName._currentValue.username,
         noteTitles: ["note1", "note2", "note3"],
         notes: ['  this is note 1, there are many like it but this one is mine', 'this is note two, less exciting than note 1', 'this is note 3, Nobody likes me'],
         pizza: "yesPlease",
